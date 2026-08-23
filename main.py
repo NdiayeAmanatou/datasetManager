@@ -2,6 +2,9 @@
 #7) Création d'un tuple contenant les domaines autorisés. 
 domaines_autorise = ("Santé", "Finance", "Agriculture", "Transport", "Education")
 
+#Partie 5 : Listes
+#9)Création d'une liste contenant les datasets. Chaque ajout est enregistré dans la liste
+ma_liste_dataset=[]
 # Partie 2: structure de controle
 #5) Création d'un menu interactif (provisoire) 
 continuer = True
@@ -42,6 +45,9 @@ while continuer:
             "format": format_fichier,
             "public": public
         }
+ #10) Ajout des fonctionnalite (Ajouter)
+        ma_liste_dataset.append(dataset)
+        print(f"\nDataset '{nom}' ajouté avec succès !")
  
         print("Affichage du dataset")
         print(f"Nom          : {dataset['nom']}")
