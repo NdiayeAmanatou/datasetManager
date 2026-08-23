@@ -1,3 +1,5 @@
+import csv
+
 # Partie 4 : Tuples
 #7) Création d'un tuple contenant les domaines autorisés. 
 domaines_autorise = ("Santé", "Finance", "Agriculture", "Transport", "Education")
@@ -17,7 +19,9 @@ while continuer:
     print("5. Modifier")
     print("6. Supprimer")
     print("7. Statistiques")
-    print("8. Quitter")
+    print("8. Sauvegarder dans un fichier CSV")
+    print("9. Charger depuis le fichier CSV")
+    print("10. Quitter")
 
     choix = input("votre choix: ")
 
@@ -148,8 +152,22 @@ while continuer:
             print("Répartition par domaine :")
             for domaine, nombre in repartition.items():
                 print(f"  - {domaine} : {nombre}") 
-                  
+#Partie 7 : fichiers
+#12)sauvegarde des données dans le fichier datasets
     elif choix == "8":
+        if len(ma_liste_dataset) ==0:
+              print(" il n'y a aucun dataset a sauvegarder")
+        else:
+            with open("datasets.csv" , "w" , newline="") as fichier:
+                writer = csv.DictWriter(fichier, fieldnames=["nom", "domaine", "lignes", "colonnes", "taille", "format", "public"])
+                writer.writeheader()
+                for d in ma_liste_dataset:
+                    writer.writerow(d)
+            print("Datasets sauvegardés dans datasets.csv avec succès.")
+
+    elif choix == "9":
+        print("Charger depuis le fichier CSV")
+    elif choix== "10":
         print("Quitter l'application")
         continuer = False
     else:
