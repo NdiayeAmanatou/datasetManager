@@ -13,7 +13,10 @@ while continuer:
     print("1. Ajouter un dataset")
     print("2. Afficher les datasets")
     print("3. Rechercher")
-    print("4. Quitter")
+    print("4. Trier")
+    print("5. Modifier")
+    print("6. Supprimer")
+    print("7. Quitter")
 
     choix = input("votre choix: ")
 
@@ -62,7 +65,19 @@ while continuer:
         print("Afficher les datasets")
     elif choix == "3":
         print("Rechercher")
+#10) Ajout des fonctionnalite (Trier)        
     elif choix == "4":
+        if len(ma_liste_dataset)==0:
+            print("il y'a aucun dataset a trier")
+        else :
+            dataset_tries= sorted(ma_liste_dataset , key=lambda d :d["nom"])
+            for d in dataset_tries:
+                print(f"- {d['nom']} ")            
+    elif choix == "5":
+        print("Modifier")
+    elif choix == "6":
+        print("Supprimer")
+    elif choix == "7":
         print("Quitter l'application")
         continuer = False
     else:
