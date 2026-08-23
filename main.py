@@ -45,5 +45,34 @@ while continuer:
         continuer = False
     else:
         print("choix invalide, veuillez reessayer.")
-        
 
+#6) Creation d'un dictionnaire pour stocker les métadonnées de chaque dataset 
+    if choix=="1":
+        nom= input("quel est le nom du dataset:")
+        domaine=input("preciser le domaine:")
+        nb_lignes= int(input("donner le nombre de lignes:"))
+        nb_colonnes=int(input("donner le nombre de colonnes:"))
+        taille_mo=int(input("donner la taille en Mo:"))
+        format_fichier=input("choisir le format (csv ou json):")
+        public=input("Public (true ou false) : ")
+        public = public_saisie == "true"
+
+        dataset = {
+            "nom": nom,
+            "domaine": domaine,
+            "lignes": nb_lignes,
+            "colonnes": nb_colonnes,
+            "taille": taille_mo,
+            "format": format_fichier,
+            "public": public
+        }
+
+        print("Affichage du dataset ")
+        print(f"Nom          : {dataset['nom']}")
+        print(f"Domaine      : {dataset['domaine']}")
+        print(f"Lignes       : {dataset['lignes']}")
+        print(f"Colonnes     : {dataset['colonnes']}")
+        print(f"Taille       : {dataset['taille']} Mo")
+        print(f"Format       : {dataset['format']}")
+        print(f"Public       : {dataset['public']}")
+       
