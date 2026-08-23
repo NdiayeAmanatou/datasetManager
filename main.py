@@ -85,8 +85,24 @@ while continuer:
             dataset_tries= sorted(ma_liste_dataset , key=lambda d :d["nom"])
             for d in dataset_tries:
                 print(f"- {d['nom']} ")            
+
+#10) Ajout des fonctionnalite (Modifier) 
     elif choix == "5":
-        print("Modifier")
+        if len(ma_liste_dataset) == 0:
+            print("Aucun dataset n'est enregistré.")
+        else:
+            nom_modif = input("quel est le nom du dataset à modifier : ")
+            trouve = False
+            for d in ma_liste_dataset:
+                if d["nom"] == nom_modif:
+                    d["lignes"] = int(input("entrer a nouveau le nombre de lignes : "))
+                    d["colonnes"] = int(input("entrer a nouveau le nombres de colonnes : "))
+                    d["taille"] = float(input("entrer a nouveau la taille en Mo : "))
+                    print("Dataset modifié avec succès.")
+                    trouve = True
+                    break
+            if not trouve:
+                print("Dataset introuvable.")
     elif choix == "6":
         print("Supprimer")
     elif choix == "7":
