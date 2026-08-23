@@ -63,8 +63,20 @@ while continuer:
 
     elif choix == "2":
         print("Afficher les datasets")
+
+#10)Ajout des fonctionnalites (Rechercher)
     elif choix == "3":
-        print("Rechercher")
+        if len(ma_liste_dataset) == 0:
+            print("Aucun dataset n'est enregistré.")
+        else:
+            nom_recherche = input(" quel est le nom du dataset que vous rechercher: ")
+            trouve = False
+            for d in ma_liste_dataset:
+                if d["nom"] == nom_recherche:
+                    print(f"\n Dataset Trouvé : {d}")
+                    trouve = True
+            if not trouve:
+                print("Aucun dataset trouvé avec ce nom.")
 #10) Ajout des fonctionnalite (Trier)        
     elif choix == "4":
         if len(ma_liste_dataset)==0:
