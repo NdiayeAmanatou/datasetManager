@@ -75,4 +75,8 @@ while continuer:
         print(f"Taille       : {dataset['taille']} Mo")
         print(f"Format       : {dataset['format']}")
         print(f"Public       : {dataset['public']}")
+
+#7) Creation d'un tuple contenant des domaines autorises
+domaines_autorise =("Santé","Finance","Agriculture","Transport","Education")
+
        
