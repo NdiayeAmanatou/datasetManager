@@ -1,62 +1,37 @@
-# PARTIE 1 : Types de base, variables, Entrées/sorties
-# Saisie des métadonnées 
-nom = input("Quel est le nom du datatset: ")
-domaine = input(" Precisez Domaine : ")
-nb_lignes = int(input("Donnez le nombre de ligne: "))
-nb_colonnes = int(input("Donner le nombre de colonnes : "))
-taille_mo = float(input("Donner la taille en Mo : "))
-format_fichier = input(" Donner le format (csv ou json) : ").lower()
-public_saisie = input("Public (true ou false) : ").lower()
+# Partie 4 : Tuple des domaines autorisés
+#7) Créez un tuple contenant les domaines autorisés. 
+domaines_autorise = ("Santé", "Finance", "Agriculture", "Transport", "Education")
 
-# Conversion de "true"/"false" (texte) en booléen Python
-public = public_saisie == "true"
-
-# 4) Affichez ensuite un résumé formaté. 
-print("\n===== Résumé du dataset =====")
-print(f"Nom          : {nom}")
-print(f"Domaine      : {domaine}")
-print(f"Lignes       : {nb_lignes}")
-print(f"Colonnes     : {nb_colonnes}")
-print(f"Taille       : {taille_mo} Mo")
-print(f"Format       : {format_fichier}")
-print(f"Public       : {public}")
-
-# Partie 2: structure de controle 
+# Partie 2: structure de controle
 continuer = True
 
 while continuer:
-    print("========================")
     print("1. Ajouter un dataset")
     print("2. Afficher les datasets")
     print("3. Rechercher")
     print("4. Quitter")
-    print("========================")
 
     choix = input("votre choix: ")
 
     if choix == "1":
-        print("Ajouter un dataset")
-    elif choix == "2":
-        print("Afficher les datasets")
-    elif choix == "3":
-        print("Rechercher")
-    elif choix == "4":
-        print("Quitter l'application")
-        continuer = False
-    else:
-        print("choix invalide, veuillez reessayer.")
+# Partie 1 : Types de base, variables, Entrées et sorties 
+        nom = input("quel est le nom du dataset : ")
+        
+        #8) Vérifiez que le domaine saisi, à la question 3, appartient au tuple
+        domaine = input("preciser le domaine : ")
+        while domaine not in domaines_autorise:
+            print(f"Domaine invalide. Choix possibles : {domaines_autorise}")
+            domaine = input("preciser le domaine : ")
 
-#6) Creation d'un dictionnaire pour stocker les métadonnées de chaque dataset 
-    if choix=="1":
-        nom= input("quel est le nom du dataset:")
-        domaine=input("preciser le domaine:")
-        nb_lignes= int(input("donner le nombre de lignes:"))
-        nb_colonnes=int(input("donner le nombre de colonnes:"))
-        taille_mo=int(input("donner la taille en Mo:"))
-        format_fichier=input("choisir le format (csv ou json):")
-        public=input("Public (true ou false) : ")
+        nb_lignes = int(input("donner le nombre de lignes : "))
+        nb_colonnes = int(input("donner le nombre de colonnes : "))
+        taille_mo = float(input("donner la taille en Mo : "))
+        format_fichier = input("choisir le format (csv ou json) : ").lower()
+        public_saisie = input("Public (true ou false) : ").lower()
         public = public_saisie == "true"
 
+#Partie 3 – Dictionnaires 
+#6)Création d'un dictionnaire pour stocker les métadonnées de chaque dataset 
         dataset = {
             "nom": nom,
             "domaine": domaine,
@@ -67,7 +42,7 @@ while continuer:
             "public": public
         }
 
-        print("Affichage du dataset ")
+        print("Affichage du dataset")
         print(f"Nom          : {dataset['nom']}")
         print(f"Domaine      : {dataset['domaine']}")
         print(f"Lignes       : {dataset['lignes']}")
@@ -76,7 +51,12 @@ while continuer:
         print(f"Format       : {dataset['format']}")
         print(f"Public       : {dataset['public']}")
 
-#7) Creation d'un tuple contenant des domaines autorises
-domaines_autorise =("Santé","Finance","Agriculture","Transport","Education")
-
-       
+    elif choix == "2":
+        print("Afficher les datasets")
+    elif choix == "3":
+        print("Rechercher")
+    elif choix == "4":
+        print("Quitter l'application")
+        continuer = False
+    else:
+        print("choix invalide, veuillez reessayer.")
