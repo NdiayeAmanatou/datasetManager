@@ -1,8 +1,9 @@
-# Partie 4 : Tuple des domaines autorisés
-#7) Créez un tuple contenant les domaines autorisés. 
+# Partie 4 : Tuples
+#7) Création d'un tuple contenant les domaines autorisés. 
 domaines_autorise = ("Santé", "Finance", "Agriculture", "Transport", "Education")
 
 # Partie 2: structure de controle
+#5) Création d'un menu interactif (provisoire) 
 continuer = True
 
 while continuer:
@@ -41,7 +42,7 @@ while continuer:
             "format": format_fichier,
             "public": public
         }
-
+ 
         print("Affichage du dataset")
         print(f"Nom          : {dataset['nom']}")
         print(f"Domaine      : {dataset['domaine']}")
