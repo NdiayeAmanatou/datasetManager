@@ -103,8 +103,22 @@ while continuer:
                     break
             if not trouve:
                 print("Dataset introuvable.")
+
+ #10) Ajout des fonctionnalite (Supprimer)               
     elif choix == "6":
-        print("Supprimer")
+        if len(ma_liste_dataset) == 0:
+            print("Aucun dataset n'est enregistré.")
+        else:
+            nom_suppr = input("quel est le nom du dataset à supprimer : ")
+            trouve = False
+            for d in ma_liste_dataset:
+                if d["nom"] == nom_suppr:
+                    ma_liste_dataset.remove(d)
+                    print("Le dataset est supprimé avec succès.")
+                    trouve = True
+                    break
+            if not trouve:
+                print("Le dataset est introuvable.")
     elif choix == "7":
         print("Quitter l'application")
         continuer = False
