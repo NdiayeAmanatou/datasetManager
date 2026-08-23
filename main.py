@@ -75,8 +75,10 @@ while continuer:
                 if d["nom"] == nom_recherche:
                     print(f"\n Dataset Trouvé : {d}")
                     trouve = True
+                    break
             if not trouve:
                 print("Aucun dataset trouvé avec ce nom.")
+
 #10) Ajout des fonctionnalite (Trier)        
     elif choix == "4":
         if len(ma_liste_dataset)==0:
