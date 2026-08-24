@@ -185,7 +185,8 @@ while continuer:
                     writer.writerow(d)
             print("Datasets sauvegardés dans datasets.csv avec succès.")
 
- #12)recharger et afficher les donnees   
+ #12)recharger et afficher les donnees  
+ #Partie 8 : exceptions le fichier n'existe pas ; 
     elif choix == "9":
         try:
             with open("datasets.csv", "r") as fichier:
@@ -194,7 +195,7 @@ while continuer:
                 for ligne in reader:
                     print(f"- {ligne['nom']} | {ligne['domaine']} | {ligne['lignes']} lignes | {ligne['format']}")
         except FileNotFoundError:
-            print("Le fichier datasets.csv n'existe pas encore. Sauvegardez d'abord des datasets (choix 8).")
+            print("Le fichier datasets.csv n'existe pas encore. Sauvegardez d'abord des datasets ")
 
     elif choix== "10":
         print("Quitter l'application")
