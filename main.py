@@ -35,9 +35,29 @@ while continuer:
             print(f"Domaine invalide. Choix possibles : {domaines_autorise}")
             domaine = input("preciser le domaine : ")
 
-        nb_lignes = int(input("donner le nombre de lignes : "))
-        nb_colonnes = int(input("donner le nombre de colonnes : "))
-        taille_mo = float(input("donner la taille en Mo : "))
+#Partie 8: exceptions 
+#Saisit d'un texte au lieu d'un nombre (pour le nombre de ligne);
+        while True:
+            try:
+                nb_lignes = int(input("donner le nombre de lignes : "))
+                break
+            except ValueError:
+                print("Veuillez entrer un nombre valide.")
+#Saisit d'un texte au lieu d'un nombre (pour le nombre de colonne);
+        while True:
+            try:
+                nb_colonnes = int(input("donner le nombre de colonnes : "))
+                break
+            except ValueError:
+                print("Veuillez entrer un nombre valide.")
+
+#Saisit d'un texte au lieu d'un nombre (pour la taille en Mo);
+        while True:
+            try:
+               taille_mo = int(input("donner la taille du fichier en Mo : "))
+               break
+            except ValueError:
+                print("Veuillez entrer un nombre valide.")
         format_fichier = input("choisir le format (csv ou json) : ").lower()
         public_saisie = input("Public (true ou false) : ").lower()
         public = public_saisie == "true"
