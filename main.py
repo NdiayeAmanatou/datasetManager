@@ -88,7 +88,8 @@ while continuer:
 
     elif choix == "2":
         print("Afficher les datasets")
-
+        
+#Partie 8 : le dataset recherché n'existe pas;
 #10)Ajout des fonctionnalites (Rechercher)
     elif choix == "3":
         if len(ma_liste_dataset) == 0:
@@ -186,7 +187,7 @@ while continuer:
             print("Datasets sauvegardés dans datasets.csv avec succès.")
 
  #12)recharger et afficher les donnees  
- #Partie 8 : exceptions le fichier n'existe pas ; 
+ #Partie 8 : exceptions le fichier n'existe pas; 
     elif choix == "9":
         try:
             with open("datasets.csv", "r") as fichier:
