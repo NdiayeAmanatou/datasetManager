@@ -54,7 +54,7 @@ while continuer:
 #Saisit d'un texte au lieu d'un nombre (pour la taille en Mo);
         while True:
             try:
-               taille_mo = int(input("donner la taille du fichier en Mo : "))
+               taille_mo = float(input("donner la taille du fichier en Mo : "))
                break
             except ValueError:
                 print("Veuillez entrer un nombre valide.")
