@@ -165,8 +165,17 @@ while continuer:
                     writer.writerow(d)
             print("Datasets sauvegardés dans datasets.csv avec succès.")
 
+ #12)recharger et afficher les donnees   
     elif choix == "9":
-        print("Charger depuis le fichier CSV")
+        try:
+            with open("datasets.csv", "r") as fichier:
+                reader = csv.DictReader(fichier)
+                print("\n===== Datasets chargés depuis datasets.csv =====")
+                for ligne in reader:
+                    print(f"- {ligne['nom']} | {ligne['domaine']} | {ligne['lignes']} lignes | {ligne['format']}")
+        except FileNotFoundError:
+            print("Le fichier datasets.csv n'existe pas encore. Sauvegardez d'abord des datasets (choix 8).")
+
     elif choix== "10":
         print("Quitter l'application")
         continuer = False
