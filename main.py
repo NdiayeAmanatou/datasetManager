@@ -188,11 +188,17 @@ while continuer:
 
  #12)recharger et afficher les donnees  
  #Partie 8 : exceptions le fichier n'existe pas; 
+ #Partie 8 : exceptions le fichier est vide;
     elif choix == "9":
         try:
             with open("datasets.csv", "r") as fichier:
                 reader = csv.DictReader(fichier)
-                print("\n===== Datasets chargés depuis datasets.csv =====")
+                lignes = list(reader)
+                
+                if len(lignes)==0:
+                    print("le fichier datasets est vide")
+                else:
+                    print("\n===== Datasets chargés depuis datasets.csv =====")
                 for ligne in reader:
                     print(f"- {ligne['nom']} | {ligne['domaine']} | {ligne['lignes']} lignes | {ligne['format']}")
         except FileNotFoundError:
