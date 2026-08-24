@@ -1,4 +1,3 @@
-#menu.py
 def afficher_menu():
     print("1. Ajouter un dataset")
     print("2. Afficher les datasets")

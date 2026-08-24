@@ -134,7 +134,7 @@ def sauvegarder():
     if len(ma_liste_dataset) ==0:
         print(" il n'y a aucun dataset a sauvegarder")
     else:
-        with open("datasets.csv" , "w" , newline="") as fichier:
+        with open("data/datasets.csv" , "w" , newline="") as fichier:
             writer = csv.DictWriter(fichier, fieldnames=["nom", "domaine", "lignes", "colonnes", "taille", "format", "public"])
             writer.writeheader()
             for d in ma_liste_dataset:
@@ -143,7 +143,7 @@ def sauvegarder():
 
 def recharger():
     try:
-        with open("datasets.csv", "r") as fichier:
+        with open("data/datasets.csv", "r") as fichier:
             reader = csv.DictReader(fichier)
             lignes = list(reader)
             if len(lignes)==0:
